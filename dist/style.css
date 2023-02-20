@@ -126,8 +126,17 @@
     margin: 0 auto;
 }
 
+@media screen and (max-width:468px) {
+    .container{
+        width: 100%;
+    }
+}
+
+
+/** HEader ----**/
 .header{
     background: #2b2b2b;
+    position: relative;
 }
 
 
@@ -154,6 +163,7 @@
 .header .branding{
     display: flex;
     align-items: center;
+    flex-shrink: 0;
 }
 
 .header .header-nav ul{
@@ -173,4 +183,48 @@
 
 .header .header-nav ul li:hover a{
     color: #ffa700;
+}
+
+.toggle-menu{
+    display: none;
+}
+
+.toggle-menu span{
+    width: 3.5rem;
+    height: .3rem;
+    background-color: #ffa700;
+    display: block;
+    margin-bottom: .6rem;
+    border-radius: 5rem;
+}
+
+@media screen and (max-width:500px) {
+    .header{
+        padding: 1.65rem 0;
+    }
+    .toggle-menu{
+        display: block;
+    }
+    .header .header-nav{
+        position: absolute;
+        top: 8.8rem;
+        left: 0;
+        width: 100%;
+        background-color: rgb(255, 255, 255);
+        height: 100vh;
+    }
+    .header .header-nav ul{
+        display: block;
+        text-align: center;
+    }
+    .header .header-nav ul li{
+        margin-left: 0;
+    }
+
+    .header .header-nav ul li a{
+        color: #2b2b2b;
+        font-size: 3rem;
+    }
+
+    
 }
