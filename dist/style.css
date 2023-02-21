@@ -126,7 +126,7 @@
     margin: 0 auto;
 }
 
-@media screen and (max-width:468px) {
+@media screen and (max-width:600px) {
     .container{
         width: 100%;
     }
@@ -136,7 +136,8 @@
 /** HEader ----**/
 .header{
     background: #2b2b2b;
-    position: relative;
+    position: fixed;
+    width: 100%;
     z-index: 500;
 }
 
@@ -199,7 +200,7 @@
     border-radius: 5rem;
 }
 
-@media screen and (max-width:755px) {
+@media screen and (max-width:600px) {
     .header{
         padding: 1.65rem 0;
         position: fixed;
@@ -302,7 +303,7 @@
 
 
 
-    @media screen and (max-width:500px) {
+    @media screen and (max-width:600px) {
         .banner .banner-wrapper{
             flex-direction: column-reverse;
         }
@@ -315,7 +316,7 @@
         .banner .banner-text h1{
             max-width: fit-content;
             font-size: 3rem;
-            margin: 0 auto;
+            margin: 2rem auto;
         }
 
         .banner img{
@@ -352,7 +353,7 @@
     }
 
     .about-wrapper .about-img .overflow{
-        opacity: 30%;
+        opacity: 40%;
         position: absolute;
         z-index: 100;
     }
@@ -374,7 +375,7 @@
         text-align: justify;
     }
 
-    @media screen and (max-width:500px) {
+    @media screen and (max-width:600px) {
         .about .about-wrapper{
             flex-direction: column;
             text-align: center;
@@ -398,9 +399,52 @@
         .about-img img{
             width: 20rem;
         }
-
-
     }
+
+
+/*----------Services-----------*/
+.hm-services{
+    background: #2b2b2b;
+    padding: 8rem 0;
+}
+
+.hm-services .hm-services-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 10rem;
+    row-gap: 10rem;
+}
+
+.hm-services .hm-services-items{
+    text-align: center;
+}
+
+.hm-services .hm-services-items i{
+    font-size: 5rem;
+    color: #ffa700;
+    margin-bottom: 2rem;
+}
+
+.hm-services .hm-services-items h4{
+    color: #ffa700;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.hm-services .hm-services-items p{
+    color: #ffffff;
+    margin: 2rem 0;
+    text-align: justify;
+    line-height: 1.8;
+}
+
+
+@media screen and (max-width:600px) {
+    .hm-services .hm-services-wrapper{
+        grid-template-columns: 1fr;
+        padding: 3rem 4rem;
+    }
+}
 
 
 
