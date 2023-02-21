@@ -137,6 +137,7 @@
 .header{
     background: #2b2b2b;
     position: relative;
+    z-index: 500;
 }
 
 
@@ -198,20 +199,40 @@
     border-radius: 5rem;
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width:755px) {
     .header{
         padding: 1.65rem 0;
+        position: fixed;
+        width: 100%;
     }
     .toggle-menu{
         display: block;
     }
+
+    .toggle-menu span{
+        transition: .5s ease;  
+    }
+
+    .toggle-menu.open span:first-child{
+        transform: translate(0, 9px) rotate(225deg);  
+    }
+
+    .toggle-menu.open span:nth-child(2){
+        opacity: 0;
+    }
+
+    .toggle-menu.open span:nth-child(3){
+        transform: translate(0, -8.8px) rotate(-225deg);  
+    }
+    
     .header .header-nav{
         position: absolute;
         top: 8.8rem;
-        left: 0;
+        right: -100rem;
         width: 100%;
         background-color: rgb(255, 255, 255);
         height: 100vh;
+        transition: .5s ease;
     }
     .header .header-nav ul{
         display: block;
@@ -219,12 +240,199 @@
     }
     .header .header-nav ul li{
         margin-left: 0;
+        border-bottom: 1px solid #2b2b2b;
+        cursor: pointer;
     }
 
     .header .header-nav ul li a{
         color: #2b2b2b;
         font-size: 3rem;
     }
+    .header .header-nav ul li:hover{
+        background: hsl(0, 0%, 20%);
+    }
 
+    .header-nav.open{
+        right: 0;  
+    }
     
+}
+
+
+
+
+/*-------BANNER--------*/
+
+    .banner{
+        background: #ffffff;
+        padding: 5rem 0;
+        padding-top: 15rem;
+    }
+
+    .banner .banner-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .banner .banner-text{
+        margin-right: 10rem;
+    }
+
+
+    .banner .banner-text h1{
+        color: #ffa700;
+        font-size: 8rem;
+        font-weight: 800;
+        max-width: 40rem;
+        line-height: 1.2;
+    }
+
+    .banner .banner-text p{
+        max-width: 40rem;
+        text-align: justify;
+        margin: 3rem 0;
+        line-height: 1.8;
+    }
+
+    .banner a#banner-btn{
+        text-transform: uppercase;
+        border: 1px solid transparent !important;
+    }
+
+
+
+    @media screen and (max-width:500px) {
+        .banner .banner-wrapper{
+            flex-direction: column-reverse;
+        }
+
+        .banner .banner-text{
+            margin-right: 0;
+            text-align: center;
+        }
+
+        .banner .banner-text h1{
+            max-width: fit-content;
+            font-size: 3rem;
+            margin: 0 auto;
+        }
+
+        .banner img{
+            width: 20rem;
+        }
+
+
+    }
+
+
+
+
+/*----------About---------*/
+
+
+
+    .about-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10rem auto;
+    }
+
+    .about-wrapper .about-img{
+        width: 60rem;
+        flex-shrink: 0;
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+
+    .about-img img{
+        width: 55rem;
+    }
+
+    .about-wrapper .about-img .overflow{
+        opacity: 30%;
+        position: absolute;
+        z-index: 100;
+    }
+
+    .about-wrapper .about-text{
+        margin-left: 20rem;
+    }
+
+    .about-wrapper .about-text h2{
+        font-size: 3rem;
+        color: #ffa700;
+        font-weight: 600;
+    }
+
+    .about-wrapper .about-text p{
+        line-height: 1.8;
+        width: 50rem;
+        margin: 2rem 0;
+        text-align: justify;
+    }
+
+    @media screen and (max-width:500px) {
+        .about .about-wrapper{
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .about .about-text{
+            margin: 2rem 4rem;
+            text-align: center;
+        }
+
+        .about .about-text h2{
+            max-width: fit-content;
+            font-size: 3rem;
+            margin: 0 auto;
+        }
+
+        .about .about-text p{
+            width: 40rem;
+        }
+
+        .about-img img{
+            width: 20rem;
+        }
+
+
+    }
+
+
+
+
+
+
+/*----------REPEATABLE PATTERN-----------*/
+
+.btn{
+    padding: 1.2rem 1.5rem;
+    border-radius: 5rem;
+    display: inline-block;
+    transition: .15s ease;
+    border: 1px solid transparent;
+}
+
+.bg--yellow{
+    background: #ffa700;
+    color: #ffffff;
+}
+
+.bg--yellow:hover{
+    background: #2b2b2b;
+    border: 1px solid #ffa700;
+}
+
+.bg--dark{
+    background: #2b2b2b;
+    color: #ffffff;
+}
+
+
+body{
+    padding-bottom: 100rem
 }
